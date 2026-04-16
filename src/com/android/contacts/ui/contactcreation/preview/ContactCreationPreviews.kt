@@ -1,0 +1,264 @@
+package com.android.contacts.ui.contactcreation.preview
+
+import android.content.res.Configuration
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.android.contacts.ui.contactcreation.ContactCreationEditorScreen
+import com.android.contacts.ui.contactcreation.component.AddMoreInfoSection
+import com.android.contacts.ui.contactcreation.component.AddressSectionContent
+import com.android.contacts.ui.contactcreation.component.EmailSectionContent
+import com.android.contacts.ui.contactcreation.component.GroupCheckboxRow
+import com.android.contacts.ui.contactcreation.component.GroupSectionContent
+import com.android.contacts.ui.contactcreation.component.NameSectionContent
+import com.android.contacts.ui.contactcreation.component.OrganizationSectionContent
+import com.android.contacts.ui.contactcreation.component.PhoneFieldRow
+import com.android.contacts.ui.contactcreation.component.PhoneSectionContent
+import com.android.contacts.ui.contactcreation.component.PhotoAvatar
+import com.android.contacts.ui.contactcreation.component.PhotoSectionContent
+import com.android.contacts.ui.core.AppTheme
+
+// region Full Screen Previews
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+private fun ContactCreationEditorScreenPreview() {
+    AppTheme {
+        ContactCreationEditorScreen(
+            uiState = PreviewData.fullUiState,
+            accounts = emptyList(),
+            onAction = {},
+        )
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+private fun ContactCreationEditorScreenEmptyPreview() {
+    AppTheme {
+        ContactCreationEditorScreen(
+            uiState = PreviewData.emptyUiState,
+            accounts = emptyList(),
+            onAction = {},
+        )
+    }
+}
+
+@Preview(
+    showBackground = true,
+    showSystemUi = true,
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+)
+@Composable
+private fun ContactCreationEditorScreenDarkPreview() {
+    AppTheme {
+        ContactCreationEditorScreen(
+            uiState = PreviewData.fullUiState,
+            accounts = emptyList(),
+            onAction = {},
+        )
+    }
+}
+
+// endregion
+
+// region PhotoSection
+
+@Preview(showBackground = true)
+@Composable
+private fun PhotoSectionNoPhotoPreview() {
+    AppTheme {
+        PhotoSectionContent(photoUri = null, onAction = {})
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun PhotoAvatarNoPhotoPreview() {
+    AppTheme {
+        PhotoAvatar(
+            photoUri = null,
+            onAction = {},
+            modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp),
+        )
+    }
+}
+
+// endregion
+
+// region NameSection
+
+@Preview(showBackground = true)
+@Composable
+private fun NameSectionPreview() {
+    AppTheme {
+        NameSectionContent(nameState = PreviewData.nameState, onAction = {})
+    }
+}
+
+// endregion
+
+// region PhoneSection
+
+@Preview(showBackground = true)
+@Composable
+private fun PhoneSectionPreview() {
+    AppTheme {
+        PhoneSectionContent(phones = PreviewData.phones, onAction = {})
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun PhoneSectionSinglePreview() {
+    AppTheme {
+        PhoneSectionContent(phones = PreviewData.singlePhone, onAction = {})
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun PhoneFieldRowPreview() {
+    AppTheme {
+        PhoneFieldRow(
+            phone = PreviewData.phones[0],
+            index = 0,
+            onAction = {},
+        )
+    }
+}
+
+// endregion
+
+// region EmailSection
+
+@Preview(showBackground = true)
+@Composable
+private fun EmailSectionPreview() {
+    AppTheme {
+        EmailSectionContent(emails = PreviewData.emails, onAction = {})
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun EmailSectionSinglePreview() {
+    AppTheme {
+        EmailSectionContent(emails = PreviewData.singleEmail, onAction = {})
+    }
+}
+
+// endregion
+
+// region AddressSection
+
+@Preview(showBackground = true)
+@Composable
+private fun AddressSectionPreview() {
+    AppTheme {
+        AddressSectionContent(addresses = PreviewData.addresses, onAction = {})
+    }
+}
+
+// endregion
+
+// region OrganizationSection
+
+@Preview(showBackground = true)
+@Composable
+private fun OrganizationFieldsPreview() {
+    AppTheme {
+        OrganizationSectionContent(organization = PreviewData.organization, onAction = {})
+    }
+}
+
+// endregion
+
+// region AddMoreInfoSection
+
+@Preview(showBackground = true)
+@Composable
+private fun AddMoreInfoSectionAllChipsPreview() {
+    AppTheme {
+        AddMoreInfoSection(
+            showAddressChip = true,
+            showOrgChip = true,
+            showNoteChip = true,
+            showGroupsChip = true,
+            showOtherChip = true,
+            onAddAddress = {},
+            onShowOrganization = {},
+            onShowNote = {},
+            onShowGroups = {},
+            onShowOtherSheet = {},
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun AddMoreInfoSectionPartialChipsPreview() {
+    AppTheme {
+        AddMoreInfoSection(
+            showAddressChip = false,
+            showOrgChip = true,
+            showNoteChip = false,
+            showGroupsChip = true,
+            showOtherChip = true,
+            onAddAddress = {},
+            onShowOrganization = {},
+            onShowNote = {},
+            onShowGroups = {},
+            onShowOtherSheet = {},
+        )
+    }
+}
+
+// endregion
+
+// region GroupSection
+
+@Preview(showBackground = true)
+@Composable
+private fun GroupSectionPreview() {
+    AppTheme {
+        GroupSectionContent(
+            availableGroups = PreviewData.availableGroups,
+            selectedGroups = PreviewData.selectedGroups,
+            onAction = {},
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun GroupCheckboxRowSelectedPreview() {
+    AppTheme {
+        GroupCheckboxRow(
+            group = PreviewData.availableGroups[0],
+            isSelected = true,
+            index = 0,
+            onAction = {},
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun GroupCheckboxRowUnselectedPreview() {
+    AppTheme {
+        GroupCheckboxRow(
+            group = PreviewData.availableGroups[1],
+            isSelected = false,
+            index = 1,
+            onAction = {},
+        )
+    }
+}
+
+// endregion
+
+// endregion

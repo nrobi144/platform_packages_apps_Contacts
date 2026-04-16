@@ -1,0 +1,144 @@
+package com.android.contacts.ui.contactcreation
+
+// TooManyFunctions: TestTags is a constants registry with index-based tag factory functions
+// (e.g., phoneField(index)). The function count is 1:1 with the number of indexed UI elements
+// in the form -- splitting would scatter related tags across files for no readability gain.
+@Suppress("TooManyFunctions")
+internal object TestTags {
+    // Top-level
+    const val SAVE_BUTTON = "contact_creation_save_button"
+    const val BACK_BUTTON = "contact_creation_back_button"
+    const val CLOSE_BUTTON = "contact_creation_close_button"
+    const val SAVE_TEXT_BUTTON = "contact_creation_save_text_button"
+
+    // Section headers
+    const val SECTION_HEADER_NAME = "contact_creation_section_header_name"
+    const val SECTION_HEADER_PHONE = "contact_creation_section_header_phone"
+    const val SECTION_HEADER_EMAIL = "contact_creation_section_header_email"
+    const val SECTION_HEADER_ADDRESS = "contact_creation_section_header_address"
+    const val SECTION_HEADER_ORGANIZATION = "contact_creation_section_header_organization"
+    const val SECTION_HEADER_GROUPS = "contact_creation_section_header_groups"
+
+    // Photo background
+    const val PHOTO_BG_STRIP = "contact_creation_photo_bg_strip"
+
+    // Dividers
+    const val DIVIDER_AFTER_PHOTO = "contact_creation_divider_after_photo"
+    const val DIVIDER_AFTER_ACCOUNT = "contact_creation_divider_after_account"
+
+    // Name section
+    const val NAME_PREFIX = "contact_creation_name_prefix"
+    const val NAME_FIRST = "contact_creation_name_first"
+    const val NAME_MIDDLE = "contact_creation_name_middle"
+    const val NAME_LAST = "contact_creation_name_last"
+    const val NAME_SUFFIX = "contact_creation_name_suffix"
+
+    // Phone section
+    const val PHONE_ADD = "contact_creation_phone_add"
+    fun phoneField(index: Int): String = "contact_creation_phone_field_$index"
+    fun phoneDelete(index: Int): String = "contact_creation_phone_delete_$index"
+    fun phoneType(index: Int): String = "contact_creation_phone_type_$index"
+
+    // Email section
+    const val EMAIL_ADD = "contact_creation_email_add"
+    fun emailField(index: Int): String = "contact_creation_email_field_$index"
+    fun emailDelete(index: Int): String = "contact_creation_email_delete_$index"
+    fun emailType(index: Int): String = "contact_creation_email_type_$index"
+
+    // Address section
+    const val ADDRESS_ADD = "contact_creation_address_add"
+    fun addressStreet(index: Int): String = "contact_creation_address_street_$index"
+    fun addressCity(index: Int): String = "contact_creation_address_city_$index"
+    fun addressRegion(index: Int): String = "contact_creation_address_region_$index"
+    fun addressPostcode(index: Int): String = "contact_creation_address_postcode_$index"
+    fun addressCountry(index: Int): String = "contact_creation_address_country_$index"
+    fun addressDelete(index: Int): String = "contact_creation_address_delete_$index"
+    fun addressType(index: Int): String = "contact_creation_address_type_$index"
+
+    // Organization section
+    const val ORG_COMPANY = "contact_creation_org_company"
+    const val ORG_TITLE = "contact_creation_org_title"
+
+    // More fields section
+    const val MORE_FIELDS_TOGGLE = "contact_creation_more_fields_toggle"
+    const val MORE_FIELDS_CONTENT = "contact_creation_more_fields_content"
+
+    // Event
+    const val EVENT_ADD = "contact_creation_event_add"
+    fun eventField(index: Int): String = "contact_creation_event_field_$index"
+    fun eventDelete(index: Int): String = "contact_creation_event_delete_$index"
+    fun eventType(index: Int): String = "contact_creation_event_type_$index"
+
+    // Relation
+    const val RELATION_ADD = "contact_creation_relation_add"
+    fun relationField(index: Int): String = "contact_creation_relation_field_$index"
+    fun relationDelete(index: Int): String = "contact_creation_relation_delete_$index"
+    fun relationType(index: Int): String = "contact_creation_relation_type_$index"
+
+    // IM
+    const val IM_ADD = "contact_creation_im_add"
+    fun imField(index: Int): String = "contact_creation_im_field_$index"
+    fun imDelete(index: Int): String = "contact_creation_im_delete_$index"
+    fun imProtocol(index: Int): String = "contact_creation_im_protocol_$index"
+
+    // Website
+    const val WEBSITE_ADD = "contact_creation_website_add"
+    fun websiteField(index: Int): String = "contact_creation_website_field_$index"
+    fun websiteDelete(index: Int): String = "contact_creation_website_delete_$index"
+    fun websiteType(index: Int): String = "contact_creation_website_type_$index"
+
+    // Note
+    const val NOTE_FIELD = "contact_creation_note_field"
+
+    // Nickname
+    const val NICKNAME_FIELD = "contact_creation_nickname_field"
+
+    // SIP
+    const val SIP_FIELD = "contact_creation_sip_field"
+
+    // Group section
+    const val GROUP_SECTION = "contact_creation_group_section"
+    fun groupCheckbox(index: Int): String = "contact_creation_group_checkbox_$index"
+
+    // Account
+    const val ACCOUNT_CHIP = "contact_creation_account_chip"
+
+    // Discard dialog
+    const val DISCARD_DIALOG = "contact_creation_discard_dialog"
+    const val DISCARD_DIALOG_CONFIRM = "contact_creation_discard_dialog_confirm"
+    const val DISCARD_DIALOG_DISMISS = "contact_creation_discard_dialog_dismiss"
+
+    // Photo
+    const val PHOTO_AVATAR = "contact_creation_photo_avatar"
+    const val PHOTO_MENU = "contact_creation_photo_menu"
+    const val PHOTO_PICK_GALLERY = "contact_creation_photo_pick_gallery"
+    const val PHOTO_TAKE_CAMERA = "contact_creation_photo_take_camera"
+    const val PHOTO_REMOVE = "contact_creation_photo_remove"
+    const val PHOTO_PLACEHOLDER_ICON = "contact_creation_photo_placeholder_icon"
+
+    // Add more info chip grid
+    const val ADD_MORE_INFO_SECTION = "contact_creation_add_more_info"
+    const val OTHER_FIELDS_SHEET = "contact_creation_other_fields_sheet"
+    fun addMoreInfoChip(section: String): String = "contact_creation_add_more_info_chip_$section"
+    fun otherSheetItem(section: String): String = "contact_creation_other_sheet_item_$section"
+
+    // Remove field buttons for single-field sections
+    const val NICKNAME_REMOVE = "contact_creation_nickname_remove"
+    const val NOTE_REMOVE = "contact_creation_note_remove"
+    const val SIP_REMOVE = "contact_creation_sip_remove"
+    const val ORG_REMOVE = "contact_creation_org_remove"
+
+    // Account
+    const val ACCOUNT_FOOTER = "contact_creation_account_footer"
+    const val ACCOUNT_SHEET = "contact_creation_account_sheet"
+    fun accountSheetItem(index: Int): String = "contact_creation_account_sheet_item_$index"
+
+    // Custom label dialog
+    const val CUSTOM_LABEL_DIALOG = "custom_label_dialog"
+    const val CUSTOM_LABEL_INPUT = "custom_label_input"
+    const val CUSTOM_LABEL_OK = "custom_label_ok"
+    const val CUSTOM_LABEL_CANCEL = "custom_label_cancel"
+
+    // Field type selector dropdown options
+    fun fieldTypeOption(typeLabel: String): String = "field_type_option_$typeLabel"
+}
